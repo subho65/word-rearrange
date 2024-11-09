@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Rearranger</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #74ebd5;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #74ebd5;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #ACB6E5;
+            transform: scale(1.05);
+        }
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Word Rearranger</h1>
+        <form id="rearrangeForm">
+            <label for="inputWord">Enter a word:</label>
+            <input type="text" id="inputWord" name="inputWord" required>
+
+            <button type="button" id="rearrangeButton">Rearrange</button>
+
+            <label for="outputWords">Rearranged words:</label>
+            <textarea id="outputWords" name="outputWords" readonly></textarea>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('rearrangeButton').addEventListener('click', function() {
+            const inputWord = document.getElementById('inputWord').value.trim();
+
+            if (inputWord === "") {
+                alert("Please enter a word.");
+                return;
+            }
+
+            const outputArea = document.getElementById('outputWords');
+            outputArea.value = "";  // Clear previous results
+
+            let dots = 1;
+            const loadingInterval = setInterval(() => {
+                outputArea.value = 'Loading' + '.'.repeat(dots);
+                dots = (dots % 3) + 1; // Cycle through 1, 2, 3 dots
+            }, 500);
+
+            // Introduce a short delay to let the loading show before starting the worker
+            setTimeout(() => {
+                const worker = new Worker('worker.js');
+                worker.postMessage({ inputWord });
+
+                worker.onmessage = function(event) {
+                    clearInterval(loadingInterval);  // Stop the loading animation
+                    const outputWords = event.data.join('\n');
+                    outputArea.value = outputWords;  // Display results
+                };
+
+                worker.onerror = function(error) {
+                    clearInterval(loadingInterval);  // Stop the loading animation in case of an error
+                    console.error("Worker error:", error.message);
+                    outputArea.value = "Error occurred. Please try again.";
+                };
+            }, 100); // Short delay to let the loading show
+        });
+    </script>
+</body>
+</html>
