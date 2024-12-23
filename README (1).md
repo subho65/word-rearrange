@@ -1,4 +1,3 @@
-
 # BHO Develops
 
 Welcome to **BHO Develops**, a personal project showcasing my journey in web development, coding, and innovation. This repository contains the source code and assets for the [BHO Develops website](https://subhojati.netlify.app).
@@ -23,11 +22,8 @@ BHO-Develops/
 ├── index.html               # Main Landing Page
 ├── services.html            # Services Offered
 ├── contact.html             # Contact Page
-├── resume.html              # Resume Page
 ├── report.html              # Report Issues Page
-├── notes.html               # Notes Page
-├── wallpaper.html           # Wallpaper Gallery
-├── video.mp4                # Sample Video
+
 
 # Tools and Utilities
 ├── bmi&bmr.html             # BMI and BMR Calculator
@@ -39,11 +35,14 @@ BHO-Develops/
 ├── weight.html              # Weight Converter
 ├── factor.html              # Factor Calculator
 ├── text2pdf.html            # Text-to-PDF Converter
-├── grammar.html             # Grammar Correction Tool
-├── grammarmain.html         # Grammar Correction (Main Page)
+├── grammar.html             # Grammar quiz
+├── grammarmain.html         # Grammar quiz (Main Page)
 ├── imagecompressor.html     # Image Compressor Tool
-├── otp.html                 # OTP Generator
-├── word.html                # Word Counter Tool
+├── otp.html                 # OTP Validation Ptype
+├── word.html                # Word rearranger
+├── resume.html              # Resume maker
+├── notes.html               # Notes maker 
+├── wallpaper.html           # Make wallpaper using text
 
 # Games
 ├── flappybird.html          # Flappy Bird Game
@@ -53,9 +52,9 @@ BHO-Develops/
 ├── memorygame.html          # Memory Game
 ├── numpuz.html              # Number Puzzle Game
 ├── brainvita.html           # Brainvita Game
-├── easy.html                # Easy Level Game Mode
-├── medium.html              # Medium Level Game Mode
-├── hard.html                # Hard Level Game Mode
+├── easy.html                # Easy Level Game for hangman Mode
+├── medium.html              # Medium Level Game hangman Mode
+├── hard.html                # Hard Level Game hangman Mode
 
 # Assets
 ├── liberty.otf              # Custom Font: Liberty
@@ -63,6 +62,7 @@ BHO-Develops/
 ├── move-sound.mp3           # Sound Effect: Move
 ├── tap-sound.mp3            # Sound Effect: Tap
 ├── worker.js                # Worker Script for Tools
+├── video.mp4                # Sample Video for bg remover
 ```
 
 ## 🌐 Live Demo
@@ -91,7 +91,7 @@ Check out the live version of the website here: [BHO Develops](https://subhojati
 
 For queries or collaborations, feel free to reach out:
 
-- Email: [subhojatidutta@gmail.com](mailto:subhojatidutta@gmail.com)
+- Email: [bhodevelops@gmail.com](bhodevelops@gmail.com)
 - Portfolio: [Subhojati Dutta](https://subhojati.netlify.app)
 
 ---
