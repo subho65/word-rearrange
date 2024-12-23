@@ -91,7 +91,7 @@ Check out the live version of the website here: [BHO Develops](https://subhojati
 
 For queries or collaborations, feel free to reach out:
 
-- Email: [bhodevelops@gmail.com](mailtobhodevelops@gmail.com)
+- Email: [bhodevelops@gmail.com](mailto:bhodevelops@gmail.com)
 - Portfolio: [Subhojati Dutta](https://subhojati.netlify.app)
 
 ---
