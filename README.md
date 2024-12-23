@@ -79,7 +79,7 @@ Check out the live version of the website here: [BHO Develops](https://subhojati
 
 ## 📸 Screenshot
 
-![Website Screenshot](assets/screenshot.png)
+![Website Screenshot](https://i.imghippo.com/files/ksMl2382vmA.jpg)
 
 ## 💡 How to Contribute
 
